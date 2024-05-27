@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAFFIC WATCH</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+           
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+            position: relative; 
+            z-index: 1; 
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        .button {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #ff4a4a;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            margin-right: 10px;
+        }
+        .button:hover {
+            background-color: #ff0000;
+        }
+        .navbar {
+            background-color: #333;
+            padding: 15px 0;
+            text-align: center;
+            width: 100%;
+            position: relative; 
+            z-index: 2;
+        }
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 15px 20px;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: background-color 0.3s ease;
+        }
+        .navbar a:hover {
+            background-color: #555;
+        }
+        .social-links {
+            margin-top: 20px;
+        }
+        .social-links a {
+            margin: 0 5px;
+            color: #fff;
+            font-size: 1.5em;
+        }
+        #myVideo {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1; 
+        }
+        .signup-button {
+            margin-top: 20px; 
+        }
+        .signup-button {
+            margin-top: 20px; 
+            margin-right: 10px; 
+        }
+
+        .signin-button {
+            margin-top: 20px; 
+            margin-right: 10px; 
+        }
+
+        .traffic-button {
+            margin-top: 20px; 
+        }
+
+    </style>
+</head>
+<body>
+
+<video autoplay muted loop id="myVideo">
+    <source src="21985-323496013_medium.mp4" type="video/mp4">
+</video>
+      
+<div class="container">
+    <h1>Welcome to Our traffic system</h1>
+    <p>Explore the rules.</p>
+    <a href="file:///C:/Users/USMAAN/OneDrive/Documents/solar.html" class="button">View traffic signal</a>
+   
+    <a href="C:\Users\USMAAN\OneDrive\Documents\project\signup.html" class="button signup-button">Sign Up</a>
+    <a href="C:\Users\USMAAN\OneDrive\Documents\project\signin.html" class="button signin-button">Sign in</a>
+    <a href="traffic map.html" class="button traffic-button">View traffic map</a>
+</div>
+
+<div class="navbar">
+   
+    <a href="about us.html" class="button1">About Us</a>
+    <a href="https://www.linkedin.com/in/usmaan-kawoosa-17aba1261/" class="button1">Portfolio</a>
+    <a href="mailto:contact@trafficwatch.com" class="button1">Contact Us</a>
+    <a href="#"class="button1" onclick="redirectToReactPage()">Provide feedback</a>
+    <div class="social-links">
+        <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a>
+        <a href="https://twitter.com/?lang=en" class="fab fa-twitter"></a>
+        <a href="https://www.instagram.com/?hl=en" class="fab fa-instagram"></a>
+    </div>
+</div>
+
+
+<script>
+function redirectToReactPage() {
+    window.location.href = 'http://localhost:3000/';
+}
+</script>
+
+
+</body>
+</html>
