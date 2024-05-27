@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traffic Light</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+  }
+
+  .traffic-light {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .light {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 10px;
+    background-color: #444;
+    transition: background-color 0.5s ease;
+    cursor: pointer;
+  }
+
+  .light:hover {
+    transform: scale(1.1);
+  }
+
+  .light.red:hover {
+    background-color: #f00;
+  }
+
+  .light.yellow:hover {
+    background-color: #ff0;
+  }
+
+  .light.green:hover {
+    background-color: #0f0;
+    z-index:5;
+  }
+
+  .tooltip {
+    position: absolute;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 2;
+    bottom: -130px; 
+    left: 50%;
+    
+    transform: translateX(-50%);
+  }
+
+  .light:hover + .tooltip {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+</style>
+</head>
+<body>
+
+<div class="traffic-light">
+  <div class="light red" onmouseover="changeBackground('red')"></div>
+  <div class="tooltip">Stop - Indicates that drivers must come to a complete stop and remain stopped until the signal changes.</div>
+  <div class="light yellow" onmouseover="changeBackground('yellow')"></div>
+  <div class="tooltip">Caution - Warns drivers to prepare to stop or proceed with caution.</div>
+  <div class="light green" onmouseover="changeBackground('green')"></div>
+  <div class="tooltip">Go - Allows drivers to proceed if the intersection is clear.</div>
+</div>
+
+<video id="background-video" autoplay loop muted>
+  <source id="video-source" src="5927662-uhd_3840_2160_25fps.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<script>
+  function changeBackground(color) {
+    const videoSource = document.getElementById('video-source');
+    const video = document.getElementById('background-video');
+
+    switch (color) {
+      case 'red':
+        videoSource.src = '2941116-uhd_4096_2160_24fps.mp4';
+        break;
+      case 'yellow':
+        videoSource.src = '4524880-hd_1920_1080_30fps.mp4';
+        break;
+      case 'green':
+        videoSource.src = '855567-hd_1920_1080_24fps.mp4';
+        break;
+    }
+
+    video.load();
+  }
+</script>
+
+</body>
+</html>
